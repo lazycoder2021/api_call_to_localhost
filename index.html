@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+
+
+    <p>Teach this only after you install json formatter chrome extension -- for prettying the incoming data</p>
+
+    <button class="btn">Get Data</button>
+
+    <p>This lesson covers:</p>
+    <ol>
+        <li>Click event</li>
+        <li>Js function</li>
+        <li>Api call for getting/fetching data using Axios CDN</li>
+        
+    </ol>
+
+
+    <ul class="list-wrapper">
+
+    </ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+
+
+        document.querySelector('.btn').addEventListener('click', getList)
+
+
+        async function getList() {
+            //const response =  await axios.get('https://jsonplaceholder.typicode.com/todos');
+            const response = await axios.get('http://localhost:3000/list');
+            //console.log(response.data);
+            var list = response.data;
+            console.log(list)
+
+            /*
+            for (i = 0; i < list.length; i++) {
+                document.querySelector('.list-wrapper').innerHTML += `<li>${list[i]}</li>`; 
+            }
+
+            */
+        }
+
+
+        /*  res.send(['amar', 'akbar', 'anthony']) --  add this in the /list route */
+
+
+
+
+    </script>
+</body>
+</html>
